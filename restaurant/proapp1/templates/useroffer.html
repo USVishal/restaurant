@@ -1,0 +1,37 @@
+{% extends 'baseuser.html' %}
+{% load static %}
+{% block content %}
+
+ 
+
+        
+	
+          <section class="mt-5 pt-5">
+            <div class="container py-3"  data-aos="fade-up">
+              <div class="row justify-content-center">
+                {% for x in offer %}
+                <div class="col-sm-12 col-md-6 col-lg-3 pb-4 " style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+                <div class="card text-center" style="width: 18rem;">
+                  <div class="card-body">
+                    <h2 class="card-title">{{ x.restId }}</h2>
+                    <hr>
+                    <p class="card-text fw-bold">{{ x.menuItemName}} - {{x.details}} <br> Discount <span class="bg-warning text-dark">{{ x.offer }}</span></p>
+                    <p class="card-text"> Offer start from <br> {{ x.startDate}} - To  {{x.endDate}}</p>
+                    <p class="card-text"> Status : {{ x.status}}</p>
+                    <a href="#" class="btn btn-success mb-2">Add to Cart</a><br>
+                    
+                  </div>
+                  
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </section>
+
+          {% endblock %}
+
+</body>
+
+</html>
+

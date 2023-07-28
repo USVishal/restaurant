@@ -1,0 +1,51 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Express Delivery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="{% static 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap' %}" rel="stylesheet">
+
+	<link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link  href=" https://img.freepik.com/premium-vector/food-time-logo-design-template_7649-7.jpg?w=2000"  rel="icon">
+
+	</head>
+	<body>
+        <div class="col-lg-4 text-right">
+            <button type="button" class="btn btn-Info"><a class="link-light" href="/back/">back</a></button>
+            
+  
+          </div>
+	
+        <section id="feedback">
+            <div class="container py-3" data-aos="fade-up">
+              <div class="row justify-content-center">
+                {% for x in fb %}
+                <div class="col-sm-12 col-md-6 col-lg-3 pb-4 " style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+                <div class="card text-center" style="width: 18rem;">
+                  <div class="card-body">
+                    <h2 class="card-title">Name  : <span>{{ x.CustomerId }}</span></h2>
+                    <hr>
+                    <p class="card-text fw-bold">Food Id : {{ x.fId}}</p>
+                    <p class="card-text">Feedback : {{ x.feedback}}</p>
+                    <p class="card-text">Status: {{ x.status}}</p>
+                  </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </section>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+

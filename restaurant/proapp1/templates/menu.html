@@ -1,0 +1,53 @@
+{% extends 'baserest.html' %}
+{% load static %}
+{% block content %}
+
+
+ 
+
+
+  <section class="mt-5 pt-5">
+    <div class="container py-3"  data-aos="fade-up">
+      <div class="row justify-content-center">
+        <!-- <div>
+          
+        <p>{{ x.restName }}</p>
+        
+        </div> -->
+        
+        {% for x in menu %}
+        
+        <div class="col-sm-12 col-md-6 col-lg-3 pb-4 " style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h2 class="card-title">{{ x.menuName }}</h2>
+              <hr>
+              <p class="card-text fw-bold">Type : {{ x.type }} </p>
+              <p>Cuisine :  {{ x.cuisine }}<br> </p>
+              
+              <p class="card-text"> Origin : <span class="card-text fw-bold">{{ x.origin }}</span></p>
+              <a href="#" class="btn btn-success">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  {% endblock %}
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  
+  </body>
+  
+  </html>

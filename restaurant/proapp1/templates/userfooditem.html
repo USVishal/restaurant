@@ -1,0 +1,39 @@
+{% extends 'baseuser.html' %}
+{% load static %}
+{% block content %}
+
+
+  <section class="mt-5 pt-5">
+    <div class="container py-3"  data-aos="fade-up">
+      <div class="row justify-content-center">
+        {% for x in menu %}
+        <div class="col-sm-12 col-md-6 col-lg-3 pb-4 " style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h2 class="card-title">{{ x.menuName }}</h2>
+              <hr>
+              <p class="card-text fw-bold">{{ x.restName }}</p>
+              <p class="card-text fw-bold"> Available Quantity : {{ x.quantity }}</p>
+              <p class="card-text fw-bold">Rs : {{ x.price }}</p>
+              <p class="card-text fw-bold"> Type: {{ x.type }}</p>
+              <p class="card-text fw-bold">Time: {{ x.cookingTime }}</p>
+              <p class="card-text fw-bold"> Status : {{ x.status }}</p>
+              <a href="{% url 'displayfood' x.id %}" class="btn btn-success">View</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+
+
+  {% endblock %}
+
+  
+  
+  </body>
+  
+  </html>

@@ -1,0 +1,34 @@
+{% extends 'baserest.html' %}
+{% load static %}
+{% block content %}
+
+ 
+
+        
+	
+  <section id="feedback">
+    <div class="container py-3" data-aos="fade-up">
+      <div class="row justify-content-center">
+        {% for x in fb %}
+        <div class="col-sm-12 col-md-6 col-lg-3 pb-4 " style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+        <div class="card text-center" style="width: 18rem;">
+          <div class="card-body">
+            <h2 class="card-title">Name : <span>{{ x.CustomerId }}</span></h2>
+            <hr>
+            <p class="card-text fw-bold">Food Id : {{ x.fId}}</p>
+            <p class="card-text">Feedback : {{ x.feedback}}</p>
+            <p class="card-text">Status: {{ x.status}}</p>
+          </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
+
+</body>
+
+</html>
+

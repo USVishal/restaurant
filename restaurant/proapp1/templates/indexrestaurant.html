@@ -1,0 +1,58 @@
+{% extends 'baseindex.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+  <!-- ======= Hero Section ======= -->
+
+      <div class="container-fluid mt-5 pt-5">
+        <div class="row">
+      <h1 class="text-center bg-dark text-white ">Restaurant Details</h1>
+    </div>
+      </div><br>
+      <div class="container-fluid">
+        <table class="table">
+            <thead class="bg-primary text-white">
+              <tr class="text-center">
+                
+                <th scope="col">firstName</th>
+                <th scope="col">lastName</th>
+                <th scope="col">restaurantName</th>
+                <th scope="col">location</th>
+                <th scope="col">typeOfShop</th>
+                <th scope="col">email</th>
+                <th scope="col">phone</th>
+                <th scope="col">noOfStaff</th>
+                <th scope="col">authPerson</th>
+                <th scope="col">pemail</th>
+                <th scope="col">pContact</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for x in data %}
+              <tr class="text-center">
+                
+                <td>{{x.firstName}}</td>
+                <td>{{x.lastName}}</td>
+                <td>{{x.restaurantName}}</td>
+                <td>{{x.location}}</td>
+                <td>{{x.typeOfShop}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.phone}}</td>
+                <td>{{x.noOfStaff}}</td>
+                <td>{{x.authPerson}}</td>
+                <td>{{x.pEmail}}</td>
+                <td>{{x.pContact}}</td>
+                
+                
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% endblock %}
+    </body>
+    </html>

@@ -1,0 +1,26 @@
+{% extends 'baseuser.html' %}
+{% load static %}
+
+{% block content %}
+<section class="mt-5 pt-5 ">
+    <div class="container py-3 col-sm-4 col-12  " data-aos="fade-up">
+        <div class="row justify-content-center text-center">
+            
+            
+                        <h2 class="card-title text-danger">Food Name : {{ data.menuItemName }}</h2>
+                        <hr>
+                        <p class="card-text fw-bold"> Restaurant Name : {{ data.restName }}</p>
+                        <p class="card-text fw-bold">Available Quantity : {{ data.quantity }}</p>
+                        
+                        <p class="card-text fw-bold">Price : {{ data.price}}</p>
+                        <p class="card-text fw-bold">Time : {{ data.cookingTime}}</p>
+                        <p class="card-text fw-bold">Status : {{ data.status}}</p>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                             <a href="{% url 'cart' data.id%}" class="btn btn-primary btn-md">Add to cart</a>
+                        </div>
+                   
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

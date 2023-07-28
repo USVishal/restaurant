@@ -1,0 +1,44 @@
+{% extends 'baserest.html' %}
+{% load static %}
+{% block content %}
+
+
+
+        
+	
+          <section class="mt-5 pt-5">
+            <div class="container py-3"  data-aos="fade-up">
+              <div class="row justify-content-center">
+                
+                {% for x in offer %}
+                
+                <div class="col-sm-12 col-md-6 col-lg-3 pb-4 " style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+                <div class="card text-center" style="width: 18rem;">
+                  <div class="card-body bg-light">
+                    <h3 class="card-title "><b>{{ x.menuItemName }}</b></h3>
+
+                    <!-- <h2 class="card-title text-danger">{{ x.menuItemName}}<sup class="text-right"><h6>{{ x.restId }}</h6></sup></h2> -->
+                    <hr>
+                    <p class="card-text fw-bold "><h5>-{{x.details}}-</h5> </p>
+                    <p class="card-text mt-4 "><h5><span class="bg-danger border border-danger rounded-circle text-white m-2 p-3">{{ x.offer }} <sup>off</sup></span></h5></p>
+                    <p class="card-text mt-4"> Restaurant Name :<b>{{ x.restId }}</b></p>
+                    <p class="card-text"> Offer start from <br> {{ x.startDate}} - To  {{x.endDate}}</p>
+                    <p class="card-text"> Status : {{ x.status}}</p>
+                    <!-- <a href="#" class="btn btn-success mb-2">Add to Cart</a><br> -->
+                    <a href="/updateoffer/{{ x.id }}"><img src="{% static 'images/update.png' %}" style="height: 25px;width: 30px;"></img></a>
+                    <a href="/deleteoffer/{{ x.id }}"><img src="{% static 'images/delete.png' %}" style="height: 25px;width: 30px;"></img></a>
+                  </div>
+                  
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </section>
+
+          {% endblock %}
+
+</body>
+
+</html>
+
